@@ -1,4 +1,4 @@
-function curMeans = kmeans(data, k)
+function curMeans = kmeans(data, k, maxIters)
   dim = size(data, 2);
   curMeans = zeros(k, dim);
   curLabels = zeros(size(data, 1), 1);
@@ -8,8 +8,10 @@ function curMeans = kmeans(data, k)
     curMeans(ind, :) = mins .+ (rand(1, dim) .* (maxes .- mins));
   end
   oldLabels = ones(k, dim);
-  while (~isequal(curLabels, oldLabels))
+  iters = 0;
+  while (~isequal(curLabels, oldLabels) && iters < maxIters)
     oldLabels = curLabels;
+    iters += 1;
     % Assign data points to clusters
     for curPoint = 1:size(data,1)
       minDist = -1;
