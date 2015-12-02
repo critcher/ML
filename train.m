@@ -1,7 +1,7 @@
 function Model = train(X, Y)
   pkg load image;
   k = 5;
-  pcaPercent = .65;
+  pcaPercent = .75;
   numLabels = max(Y);
   clusterPoints = {};
   
@@ -17,8 +17,9 @@ function Model = train(X, Y)
     for p = 1:size(curClassPoints,1)
       transformedPoints(p, :) = extract_feature(curClassPoints(p, :), principleComps);
     end
-    clusterPoints(curLabel + 1, 1) = transformedPoints;%kmeans(transformedPoints, 5, 200);
+    clusterPoints(curLabel + 1, 1) = transformedPoints;
   end
+  % Fill the model
   Model.principleComps = principleComps;
   Model.clusters = cell2mat(clusterPoints);
   Model.labels = zeros(size(Model.clusters, 1), 1);

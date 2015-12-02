@@ -14,14 +14,9 @@ function curMeans = kmeans(data, k, maxIters)
     iters += 1;
     % Assign data points to clusters
     for curPoint = 1:size(data,1)
-      minDist = -1;
-      for curCluster = 1:k
-        dist = sum((data(curPoint, :) - curMeans(curCluster)).^2);
-        if (minDist < 0 || dist < minDist)
-          minDist = dist;
-          curLabels(curPoint) = curCluster;
-        end
-      end
+      repeatedPoint = repmat(data(curPoint), [k, 1]);
+      dists = sum((repeatedPoint .- curMeans).^2, 2);
+      [~, curLabels(curPoint)] = min(dists);
     end
     % Move means to average of new labels
     for curCluster = 1:k
