@@ -1,0 +1,15 @@
+# Created by Octave 4.0.0, Wed Dec 02 22:38:29 2015 EST <clayton@ubuntu>
+# name: x
+# type: matrix
+# rows: 1
+# columns: 8
+ 0 0.5 0.6 0.75 0.825 0.9 1 2
+
+
+# name: y
+# type: matrix
+# rows: 1
+# columns: 8
+ 0.4872 0.4764 0.476 0.4752 0.4744 0.474 0.4768 0.5016
+
+
