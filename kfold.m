@@ -15,8 +15,8 @@ function correct = kfold(data, labels, k)
     if endIndex < size(data, 1)
       range = [range, endIndex+1:size(data,1)];
     end
-    M = train1(data(range, :), labels(range, :));
-    guesses = classify1(M, data(startIndex:endIndex, :));
+    M = train2(data(range, :), labels(range, :));
+    guesses = classify2(M, data(startIndex:endIndex, :));
     correct += sum(guesses == labels(startIndex:endIndex, :));
     total += size(guesses, 1);
   end
