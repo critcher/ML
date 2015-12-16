@@ -1,3 +1,4 @@
+% Gaussian Naive Bayes classifier
 function Model = train1(X, Y)
   pkg load image;
   pcaPercent = .8;

@@ -1,3 +1,4 @@
+% Logistic regression classifier
 function Y = classify2(m, X)
   Y = zeros(size(X, 1), 1);
   % For each data point, extract its features and use GNB to 

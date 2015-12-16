@@ -1,3 +1,4 @@
+% Gaussian Naive Bayes classifier
 function Y = classify1(m, X)
   Y = zeros(size(X, 1), 1);
   % For each data point, extract its features and use GNB to 

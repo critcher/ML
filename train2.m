@@ -1,3 +1,4 @@
+% Logistic regression classifier
 function Model = train2(X, Y)
   pkg load image;
   pcaPercent = .8;
